@@ -7,7 +7,7 @@ Simon Trichereau <br/>
 
 # Installation instructions
 ## With GIT
-In your Command Line Editor, use : ``` git clone https://github.com/trenyture/galery.git ```
+In your Command Line Editor, use : ``` git clone https://github.com/trenyture/Gallery.git ```
 ## Downloading the Zip
 Click on _Clone or Download_ button then on _Download ZIP_
 
