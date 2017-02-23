@@ -1,5 +1,9 @@
 main{
 	ul#folders_list{
+		padding-bottom: 3rem;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid $yellow;
+
 		li{
 			display: inline-block;
 			width:200px;

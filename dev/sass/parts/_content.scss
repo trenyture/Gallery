@@ -1,0 +1,11 @@
+p#breadcrumb{
+	a{
+		color:$yellow;
+		&:hover{
+			color:$red;
+		}
+	}
+	span.final{
+		color:$red;
+	}
+}
