@@ -5,24 +5,35 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Galerie Photo</title>
+		<title><?php echo $titlePage; ?> - Galerie Photo</title>
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script type="text/javascript" src="assets/js/main.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1>Galerie Photo</h1>
+			<h1><?php echo $titlePage; ?></h1>
 		</header>
 		<main>
-			<h2>Dossiers</h2>
-			<ul id="folders_list">
-				<li></li>
-			</ul>
-			<h2>Fichiers</h2>
-			<ul id="files_list">
-				<li></li>
-			</ul>
+			<?php
+				if ($backHome === true) {
+					echo "<a href='/galery/'>Retour à l'accueil</a>";
+				}
+				if ($directories !== '') {
+					echo '<ul id="folders_list">'.$directories.'</ul>';
+				}
+				if ($message !== '') {
+					echo '<ul id="files_list">'.$message.'</ul>';
+				}
+			?>
 		</main>
+		<aside>
+			<article>
+				<h2>Test</h2>
+				<img src="" alt="" />
+			</article>
+		</aside>
 		<footer>
 			<p>Tous droits réservés - Simon Trichereau - 2017</p>
 		</footer>
