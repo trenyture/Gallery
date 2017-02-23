@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="http://localhost/galery/">
+		<base href="http://www.my-site.com/path">
 		<meta charset="utf-8" />
 		<title><?php echo $titlePage; ?> - Galerie Photo</title>
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet" />
