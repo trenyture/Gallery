@@ -1,0 +1,9 @@
+#Gentlemen, start your (Rewrite)Engine!
+RewriteEngine on
+
+#Check if URL != File AND Folder
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Take the URL and send it (GET) to the PHP
+RewriteRule ^(.+)$ index.php?folder=$1 [QSA,L]

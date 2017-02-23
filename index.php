@@ -8,8 +8,8 @@
 		<title><?php echo $titlePage; ?> - Galerie Photo</title>
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script type="text/javascript" src="assets/js/main.js"></script>
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<script type="text/javascript" src="/assets/js/main.js"></script>
 	</head>
 	<body>
 		<header>
@@ -18,7 +18,7 @@
 		<main>
 			<?php
 				if ($backHome === true) {
-					echo "<a href='/galery/'>Retour à l'accueil</a>";
+					echo "<a href='/'>Retour à l'accueil</a>";
 				}
 				if ($directories !== '') {
 					echo '<ul id="folders_list">'.$directories.'</ul>';

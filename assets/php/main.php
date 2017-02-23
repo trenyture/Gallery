@@ -1,49 +1,36 @@
-<?php 
+<?php
 	$directories='';
 	$message='';
-	$false='';
 	$backHome=false;
 	if (isset($_GET['folder'])) {
-		$dir = './storage/'.$_GET['folder'].'/';
-		$dirMin = './miniatures/'.$_GET['folder'].'/';
+		$dir = '/'.trim($_GET['folder']).'/';
 		$backHome=true;
-		$titlePage=$_GET['folder'] . " - Galerie Photo";
+		$titlePage = explode('/', $_GET['folder']);
+		$titlePage = end($titlePage);
 	}else{
-		$dir = './storage/';
-		$dirMin = './miniatures/';
+		$dir = '/';
 		$titlePage="Accueil - Galerie Photo";
 	}
-	$files = scandir($dir);
+	$files = scandir('./storage'.$dir);
 	//affichage li foreach
 	foreach ($files as $file) {
-		switch ($file) {
-			case '.':
-				$false = '';
-				break;
-			case '..':
-				$false = '';
-				break;
-			case '.htaccess':
-				$false = '';
-				break;
-			default:
-				if (is_dir($dir.$file)==true) {
-					$directories .= '<li><a href="./?folder='.$file.'"><img src="http://simon-tr.com/photos/assets/img/folder.png" /><p>'.$file.'</p></a></li>';
+		if (!($file === '.' || $file === '..' || $file === '.htaccess')) {
+			if (is_dir('./storage'.$dir.$file)==true) {
+				$directories .= '<li><a href=".'.$dir.$file.'"><img src="http://simon-tr.com/photos/assets/img/folder.png" /><p>'.$file.'</p></a></li>';
+			}else{
+				$size = getimagesize('./storage'.$dir.$file);
+				if ($size[0] < $size[1]) {
+					$class='portrait';
 				}else{
-					$size = getimagesize($dir.$file);
-					if ($size[0] < $size[1]) {
-						$class='portrait';
-					}else{
-						$class='paysage';
-					}
-					$title = explode('.',$file);
-					if(sizeof($title) > 1){
-						array_pop($title);
-					}
-					$title = implode('.',$title);
-					$message .= '<li data-orientation="'.$class.'" style="background-image:url('.$dirMin.$file.');"><a href="'. $dir.$file .'" data-name="'.$title.'"></a></li>';
+					$class='paysage';
 				}
-				break;
+				$title = explode('.',$file);
+				if(sizeof($title) > 1){
+					array_pop($title);
+				}
+				$title = implode('.',$title);
+				$message .= '<li data-orientation="'.$class.'" style="background-image:url(./miniatures'.$dir.$file.');"><a href="./storage'. $dir.$file .'" data-name="'.$title.'"></a></li>';
+			}
 		}
 	}
 ?>
