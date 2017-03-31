@@ -23,10 +23,19 @@ CONTENT
 @import 'general/footer';
 
 /* ============================
-CONTENT
+PARTS
 ============================ */
 
 @import 'parts/content';
 @import 'parts/folderlist';
 @import 'parts/filelist';
 @import 'parts/view';
+
+/* ============================
+ADMINISTRATION
+============================ */
+@import 'admin/contents';
+@import 'admin/nadmin';
+@import 'admin/connexion';
+@import 'admin/dashboard';
+@import 'admin/otheradmin';

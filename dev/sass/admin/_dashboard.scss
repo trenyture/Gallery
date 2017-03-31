@@ -1,0 +1,29 @@
+section#dashboard {
+    header {
+        nav {
+            ul {
+                @include display-flex;
+                @include justify-content(space-between);
+
+                margin: 3rem;
+
+                li {
+                    a {
+                        background: $black;
+                        padding: 1rem 2rem;
+                        color: $white;
+                        text-decoration: none;
+                        display: block;
+                        text-transform: uppercase;
+
+                        @include transition(all 0.3s);
+
+                        &:hover {
+                            background: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

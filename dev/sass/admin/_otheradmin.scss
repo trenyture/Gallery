@@ -1,0 +1,14 @@
+section#otheradmin{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40rem;
+	height: auto;
+	background: $yellow;
+	padding: 2.5rem;
+	@include box-sizing(border-box);
+	@include transform(translate(-50%,-50%));
+	h1{
+		text-align: center;
+	}
+}
